@@ -265,3 +265,44 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===================================================
+   LIGHT THEME OVERRIDES FOR PROGRAMS PAGE
+=================================================== */
+[data-theme="light"] .programs-hero,
+body.light-theme .programs-hero {
+  background: linear-gradient(180deg, #edf2f9 0%, #f6f8fb 100%);
+}
+
+[data-theme="light"] .catalog-filter-btn,
+body.light-theme .catalog-filter-btn {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #4e5466;
+}
+
+[data-theme="light"] .catalog-filter-btn:hover,
+body.light-theme .catalog-filter-btn:hover {
+  color: #0a0c13;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .catalog-filter-btn.active,
+body.light-theme .catalog-filter-btn.active {
+  background: var(--lime);
+  color: #ffffff;
+  border-color: var(--lime);
+}
+
+[data-theme="light"] .catalog-card,
+body.light-theme .catalog-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .faq-item,
+body.light-theme .faq-item {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}

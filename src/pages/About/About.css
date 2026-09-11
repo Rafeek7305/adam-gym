@@ -177,3 +177,31 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===================================================
+   LIGHT THEME OVERRIDES FOR ABOUT PAGE
+=================================================== */
+[data-theme="light"] .about-hero,
+body.light-theme .about-hero {
+  background: linear-gradient(180deg, #edf2f9 0%, #f6f8fb 100%);
+}
+
+[data-theme="light"] .story-quote-card,
+body.light-theme .story-quote-card {
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .method-card,
+body.light-theme .method-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .value-item,
+body.light-theme .value-item {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}

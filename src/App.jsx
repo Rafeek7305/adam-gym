@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Router, Routes, Route } from './router/Router'
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Preloader from './components/Loader/Preloader'
@@ -17,8 +18,9 @@ export default function App() {
   const handleCloseConsultation = () => setIsConsultationOpen(false)
 
   return (
-    <Router>
-      <div className="app-container">
+    <ThemeProvider>
+      <Router>
+        <div className="app-container">
         {/* Cinematic Preloader */}
         <Preloader />
 
@@ -44,7 +46,8 @@ export default function App() {
           isOpen={isConsultationOpen}
           onClose={handleCloseConsultation}
         />
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </ThemeProvider>
   )
 }

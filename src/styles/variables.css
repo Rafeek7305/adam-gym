@@ -1,12 +1,23 @@
 :root {
   /* Brand Palettes - ADAM FITNESS CENTRE */
-  --bg-dark: #070709;
-  --bg-surface: #0e0e13;
-  --bg-card: #14141b;
-  --bg-card-hover: #1c1c25;
-  --bg-elevated: #22222d;
-  --bg-glass: rgba(14, 14, 19, 0.82);
-  --bg-glass-heavy: rgba(7, 7, 9, 0.94);
+  --bg-dark: #08090f;
+  --bg-surface: #0f121b;
+  --bg-card: #151825;
+  --bg-card-hover: #1c2032;
+  --bg-elevated: #24293d;
+  --bg-glass: rgba(16, 19, 29, 0.82);
+  --bg-glass-heavy: rgba(10, 12, 18, 0.95);
+
+  /* Elegant Section Background Tonal Hierarchy */
+  --bg-slate-deep: #10131d;
+  --bg-slate-rich: #141826;
+  --bg-slate-card: #191e30;
+  --bg-graphite-dark: #0a0c12;
+  --bg-graphite-mid: #0e111a;
+  --bg-graphite-card: #161a28;
+  --bg-navy-slate: #121624;
+  --bg-navy-card: #1b2033;
+  --bg-titanium: #111520;
 
   /* ADAM Electric Lime Accent System */
   --lime: #b4f000;
@@ -30,10 +41,10 @@
   --border-lime: rgba(180, 240, 0, 0.35);
   --border-lime-strong: rgba(180, 240, 0, 0.8);
 
-  /* Fonts */
-  --font-display: 'Syne', sans-serif;
-  --font-headline: 'Outfit', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  /* Fonts - All set strictly to Ysabeau Office */
+  --font-display: 'Ysabeau Office', sans-serif;
+  --font-headline: 'Ysabeau Office', sans-serif;
+  --font-body: 'Ysabeau Office', sans-serif;
 
   /* Spacing */
   --container-max: 1360px;
@@ -48,3 +59,52 @@
   --transition-smooth: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   --transition-slow: 0.75s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
+/* ===================================================
+   WHITE (LIGHT) THEME PALETTE SYSTEM
+=================================================== */
+[data-theme="light"],
+body.light-theme {
+  /* Brand Palettes - ADAM White Luxury Athletic */
+  --bg-dark: #f6f8fb;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f3f6fa;
+  --bg-elevated: #eef2f7;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  --bg-glass-heavy: rgba(246, 248, 251, 0.98);
+
+  /* Elegant Section Background Tonal Hierarchy */
+  --bg-slate-deep: #e8edf5;
+  --bg-slate-rich: #eff3f9;
+  --bg-slate-card: #ffffff;
+  --bg-graphite-dark: #f6f8fb;
+  --bg-graphite-mid: #edf1f8;
+  --bg-graphite-card: #ffffff;
+  --bg-navy-slate: #eef2f9;
+  --bg-navy-card: #ffffff;
+  --bg-titanium: #f2f5fa;
+
+  /* ADAM Athletic Lime Accent System (Calibrated for crisp contrast against white) */
+  --lime: #64a000;
+  --lime-bright: #76bc00;
+  --lime-soft: #558700;
+  --lime-glow: rgba(100, 160, 0, 0.22);
+  --lime-glow-strong: rgba(100, 160, 0, 0.4);
+  --lime-dim: rgba(100, 160, 0, 0.1);
+  --lime-faint: rgba(100, 160, 0, 0.05);
+
+  /* Typography Colors - High Contrast Dark & Readable */
+  --text-white: #0a0c13;
+  --text-offwhite: #1a1d26;
+  --text-muted: #4e5466;
+  --text-dark: #6e7587;
+  --text-inverse: #ffffff;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-light: rgba(0, 0, 0, 0.14);
+  --border-lime: rgba(100, 160, 0, 0.35);
+  --border-lime-strong: rgba(100, 160, 0, 0.75);
+}
+
