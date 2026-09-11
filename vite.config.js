@@ -52,6 +52,26 @@ function adamAssetsPlugin() {
           fs.copyFileSync(sourcePath, targetPath)
         }
       }
+
+      // Sync new workout images from current conversation
+      const currentBrainDir = 'C:/Users/Admin/.gemini/antigravity-ide/brain/b279565b-e2b8-47d2-aaef-c66d9d5e3283'
+      const newImagesMap = {
+        'hero_man_1.jpg': 'hero_man_workout_1789109912019.jpg',
+        'hero_man_2.jpg': 'hero_man_ropes_1789109932415.jpg',
+        'hero_man_3.jpg': 'hero_man_dumbbell_1789109954370.jpg'
+      }
+
+      for (const [targetName, sourceFile] of Object.entries(newImagesMap)) {
+        const sourcePath = path.join(currentBrainDir, sourceFile)
+        const targetPath = path.join(assetsImgDir, targetName)
+        if (fs.existsSync(sourcePath)) {
+          try {
+            fs.copyFileSync(sourcePath, targetPath)
+          } catch (err) {
+            console.error('Failed copying image', err)
+          }
+        }
+      }
     }
   }
 }

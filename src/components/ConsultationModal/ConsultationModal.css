@@ -60,8 +60,8 @@
 }
 
 .modal-title {
-  font-family: var(--font-headline);
-  font-size: 1.85rem;
+  font-family: 'Ysabeau Office', sans-serif;
+  font-size: 1.5rem;
   font-weight: 800;
   text-transform: uppercase;
   color: var(--text-white);
@@ -142,4 +142,61 @@
   .form-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===================================================
+   LIGHT THEME MODAL OVERRIDES
+=================================================== */
+[data-theme="light"] .modal-backdrop,
+body.light-theme .modal-backdrop {
+  background: rgba(10, 12, 18, 0.6);
+}
+
+[data-theme="light"] .modal-card,
+body.light-theme .modal-card {
+  background: #ffffff;
+  border-color: rgba(100, 160, 0, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.16), 0 0 30px rgba(100, 160, 0, 0.08);
+}
+
+[data-theme="light"] .modal-title,
+body.light-theme .modal-title {
+  color: #0a0c13;
+}
+
+[data-theme="light"] .form-label,
+body.light-theme .form-label {
+  color: #4e5466;
+}
+
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-select,
+[data-theme="light"] .form-textarea,
+body.light-theme .form-input,
+body.light-theme .form-select,
+body.light-theme .form-textarea {
+  background: #f4f6fa;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #0a0c13;
+}
+
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] .form-select:focus,
+[data-theme="light"] .form-textarea:focus,
+body.light-theme .form-input:focus,
+body.light-theme .form-select:focus,
+body.light-theme .form-textarea:focus {
+  background: #ffffff;
+  border-color: var(--lime);
+  box-shadow: 0 0 12px rgba(100, 160, 0, 0.2);
+}
+
+[data-theme="light"] .modal-close-btn,
+body.light-theme .modal-close-btn {
+  color: #6e7587;
+}
+
+[data-theme="light"] .modal-close-btn:hover,
+body.light-theme .modal-close-btn:hover {
+  color: var(--lime);
 }

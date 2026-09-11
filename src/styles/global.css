@@ -1,20 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap');
 @import './variables.css';
 
-/* Universal Reset */
+/* Universal Reset & Font Enforcement */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Ysabeau Office', sans-serif;
 }
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-dark);
   color: var(--text-white);
-  font-family: var(--font-body);
+  font-family: 'Ysabeau Office', sans-serif;
   overflow-x: hidden;
 }
 
@@ -22,6 +23,7 @@ body {
   min-height: 100vh;
   background-color: var(--bg-dark);
   color: var(--text-offwhite);
+  font-family: 'Ysabeau Office', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
@@ -50,25 +52,25 @@ body {
 
 /* Typography Hierarchy */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-headline);
+  font-family: 'Ysabeau Office', sans-serif;
   font-weight: 800;
   color: var(--text-white);
-  letter-spacing: -0.03em;
-  line-height: 1.08;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 h1 {
-  font-size: clamp(2.75rem, 6.5vw, 6rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.8rem);
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.35rem);
   text-transform: uppercase;
 }
 
 h3 {
-  font-size: clamp(1.4rem, 2.8vw, 2.25rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
 }
 
 p {
@@ -277,10 +279,20 @@ button, input, textarea, select {
   width: 650px;
   height: 650px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--lime-dim) 0%, rgba(180, 240, 0, 0) 70%);
-  filter: blur(80px);
+  background: radial-gradient(circle, var(--lime-dim) 0%, rgba(180, 240, 0, 0.02) 40%, rgba(180, 240, 0, 0) 70%);
   pointer-events: none;
   z-index: 0;
+  transform: translateZ(0);
+}
+
+/* High-Performance Offscreen Rendering & Buttery Smooth 60/120fps Scrolling */
+.home-page {
+  width: 100%;
+}
+
+.home-page .section:not(.hero-section) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 750px;
 }
 
 /* Reveal Animations */

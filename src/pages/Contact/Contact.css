@@ -232,3 +232,42 @@
     padding: 2rem 1.25rem;
   }
 }
+
+/* ===================================================
+   LIGHT THEME OVERRIDES FOR CONTACT PAGE
+=================================================== */
+[data-theme="light"] .contact-hero,
+body.light-theme .contact-hero {
+  background: linear-gradient(180deg, #edf2f9 0%, #f6f8fb 100%);
+}
+
+[data-theme="light"] .contact-card-box,
+body.light-theme .contact-card-box {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .contact-form-container,
+body.light-theme .contact-form-container {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .map-transit-wrapper,
+body.light-theme .map-transit-wrapper {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .transit-info-pane,
+body.light-theme .transit-info-pane {
+  background: #ffffff;
+}
+
+[data-theme="light"] .transit-item strong,
+body.light-theme .transit-item strong {
+  color: #0a0c13;
+}

@@ -1,4 +1,7 @@
 import heroAthlete from './hero_athlete.jpg'
+import heroMan1 from './hero_man_1.jpg'
+import heroMan2 from './hero_man_2.jpg'
+import heroMan3 from './hero_man_3.jpg'
 import strengthTraining from './strength_training.jpg'
 import functionalTraining from './functional_training.jpg'
 import personalTraining from './personal_training.jpg'
@@ -13,6 +16,9 @@ import logoImg from '../logo.png'
 
 export {
   heroAthlete,
+  heroMan1,
+  heroMan2,
+  heroMan3,
   strengthTraining,
   functionalTraining,
   personalTraining,
@@ -28,6 +34,9 @@ export {
 
 export default {
   heroAthlete,
+  heroMan1,
+  heroMan2,
+  heroMan3,
   strengthTraining,
   functionalTraining,
   personalTraining,
