@@ -1120,40 +1120,40 @@ export default function Home({ onOpenConsultation }) {
       =================================================== */}
       <section className="section location-section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            <div className="adam-card" style={{ padding: '2.5rem' }}>
-              <div style={{ color: 'var(--lime)', marginBottom: '1.25rem' }}>
+          <div className="location-cards-grid">
+            <div className="adam-card location-card">
+              <div className="location-icon-box">
                 <Clock size={32} />
               </div>
-              <h4 style={{ textTransform: 'uppercase', marginBottom: '0.75rem' }}>Facility Hours</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-offwhite)' }}>
+              <h4 className="location-card-title">Facility Hours</h4>
+              <p className="location-card-text">
                 <strong>Monday – Friday:</strong> 5:30 AM – 10:30 PM<br />
                 <strong>Saturday – Sunday:</strong> 6:00 AM – 9:00 PM<br />
-                <span style={{ color: 'var(--lime)', display: 'inline-block', marginTop: '0.5rem', fontWeight: 600 }}>24/7 Keycard Access for VIP Tiers</span>
+                <span className="location-vip-note">24/7 Keycard Access for VIP Tiers</span>
               </p>
             </div>
 
-            <div className="adam-card" style={{ padding: '2.5rem' }}>
-              <div style={{ color: 'var(--lime)', marginBottom: '1.25rem' }}>
+            <div className="adam-card location-card">
+              <div className="location-icon-box">
                 <MapPin size={32} />
               </div>
-              <h4 style={{ textTransform: 'uppercase', marginBottom: '0.75rem' }}>Location</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-offwhite)' }}>
+              <h4 className="location-card-title">Location</h4>
+              <p className="location-card-text">
                 840 Olympic Parkway<br />
                 Performance District, NY 10001<br />
-                <span style={{ color: 'var(--text-muted)', display: 'inline-block', marginTop: '0.5rem' }}>Validated underground athlete parking</span>
+                <span className="location-sub-note">Validated underground athlete parking</span>
               </p>
             </div>
 
-            <div className="adam-card" style={{ padding: '2.5rem' }}>
-              <div style={{ color: 'var(--lime)', marginBottom: '1.25rem' }}>
+            <div className="adam-card location-card">
+              <div className="location-icon-box">
                 <Phone size={32} />
               </div>
-              <h4 style={{ textTransform: 'uppercase', marginBottom: '0.75rem' }}>Direct Line & Chat</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-offwhite)' }}>
+              <h4 className="location-card-title">Direct Line & Chat</h4>
+              <p className="location-card-text">
                 Phone: +1 (800) 555-ADAM<br />
                 WhatsApp: Direct Member Concierge<br />
-                <a href="tel:+18005552326" style={{ color: 'var(--lime)', display: 'inline-block', marginTop: '0.5rem', fontWeight: 600 }}>
+                <a href="tel:+18005552326" className="location-call-link">
                   Call Direct Now &rarr;
                 </a>
               </p>

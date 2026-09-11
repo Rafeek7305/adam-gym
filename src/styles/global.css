@@ -122,8 +122,26 @@ button, input, textarea, select {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  .container-wide {
+    padding: 0 1.25rem;
+  }
   .section {
-    padding: 4.5rem 0;
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .container-wide {
+    padding: 0 1rem;
+  }
+  .section {
+    padding: 3.25rem 0;
   }
 }
 
@@ -205,13 +223,22 @@ button, input, textarea, select {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 1rem 2rem;
-  border-radius: 4px;
+  padding: 0.95rem 1.85rem;
+  border-radius: 6px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
   transition: all var(--transition-fast);
   z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.85rem 1.4rem;
+    font-size: 0.84rem;
+    gap: 0.5rem;
+  }
 }
 
 .btn-primary {
