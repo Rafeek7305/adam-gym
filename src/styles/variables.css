@@ -49,8 +49,8 @@
   /* Spacing */
   --container-max: 1360px;
   --container-wide: 1540px;
-  --nav-height: 88px;
-  --nav-height-mobile: 72px;
+  --nav-height: 80px;
+  --nav-height-mobile: 64px;
 
   /* Transitions */
   --ease-cinematic: cubic-bezier(0.19, 1, 0.22, 1);
@@ -58,6 +58,12 @@
   --transition-fast: 0.2s cubic-bezier(0.19, 1, 0.22, 1);
   --transition-smooth: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   --transition-slow: 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
 }
 
 /* ===================================================

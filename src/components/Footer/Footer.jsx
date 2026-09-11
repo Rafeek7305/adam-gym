@@ -290,9 +290,11 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} ADAM FITNESS CENTRE. All Rights Reserved. Built for uncompromising athletic performance.
           </div>
           <div className="footer-bottom-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
-            <a href="#safety">Facility Guidelines</a>
+            <div className="footer-legal-links">
+              <a href="#privacy">Privacy Policy</a>
+              <a href="#terms">Terms of Service</a>
+              <a href="#safety">Facility Guidelines</a>
+            </div>
             <button
               type="button"
               className="footer-scroll-top-btn"

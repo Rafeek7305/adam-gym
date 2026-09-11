@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Preloader from './components/Loader/Preloader'
 import ConsultationModal from './components/ConsultationModal/ConsultationModal'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Programs from './pages/Programs/Programs'
@@ -46,6 +47,9 @@ export default function App() {
           isOpen={isConsultationOpen}
           onClose={handleCloseConsultation}
         />
+
+        {/* Global Bottom-to-Top Floating Telemetry Button */}
+        <ScrollToTop />
         </div>
       </Router>
     </ThemeProvider>

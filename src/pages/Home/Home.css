@@ -2605,7 +2605,66 @@
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 25px rgba(180, 240, 0, 0.1);
 }
 
-/* Responsive adjustments */
+.location-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.location-card {
+  padding: 2.5rem;
+}
+
+.location-icon-box {
+  color: var(--lime);
+  margin-bottom: 1.25rem;
+}
+
+.location-card-title {
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  color: var(--text-white);
+}
+
+.location-card-text {
+  font-size: 0.95rem;
+  color: var(--text-offwhite);
+  line-height: 1.6;
+}
+
+.location-vip-note {
+  color: var(--lime);
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.location-sub-note {
+  color: var(--text-muted);
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.location-call-link {
+  color: var(--lime);
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.location-call-link:hover {
+  color: var(--lime-bright);
+  transform: translateX(4px);
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN SYSTEM — MOBILE-FIRST PERFECTION
+=================================================== */
+
+/* Tablet & Medium Screens */
 @media (max-width: 1100px) {
   .hero-floating-hud {
     display: none;
@@ -2616,6 +2675,13 @@
   .hero-quick-specs {
     max-width: 100%;
   }
+  .statement-card-container {
+    padding: 3rem 2.5rem;
+  }
+  .statement-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
   .program-display-card,
   .coach-showcase-grid {
     grid-template-columns: 1fr;
@@ -2625,15 +2691,31 @@
     min-height: 380px;
   }
   .stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .facility-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .facility-card {
+    min-height: 400px;
+  }
+  .facility-amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+  }
+  .community-cta-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
   }
 }
 
+/* Tablets & Large Phones (< 900px) */
 @media (max-width: 900px) {
   .hero-bg-media {
     width: 100%;
-    opacity: 0.35;
+    opacity: 0.32;
   }
   .hero-slide-indicators {
     bottom: 1.25rem;
@@ -2642,60 +2724,721 @@
   }
   .hero-section {
     padding-top: calc(var(--nav-height) + 1.5rem);
+    padding-bottom: 4rem;
     min-height: auto;
   }
   .philosophy-grid {
-    grid-template-columns: 1fr;
-  }
-  .facility-grid {
-    grid-template-columns: 1fr;
-  }
-  .facility-card-main,
-  .facility-card-side {
-    min-height: 320px;
-  }
-  .statement-body-row {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 }
 
-@media (max-width: 640px) {
-  .hero-slide-indicators {
-    display: none;
-  }
-  .hero-quick-specs {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
+/* Mobile Screens (< 768px) */
+@media (max-width: 768px) {
+  /* 01 Hero Section */
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 1rem);
+    padding-bottom: 3.5rem;
   }
   .hero-badge-pill {
-    flex-wrap: wrap;
+    display: inline-flex;
+    align-items: center;
     gap: 0.5rem;
-    padding: 0.4rem 0.85rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
   }
   .hero-badge-text {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  .hero-badge-sub {
+    display: none; /* Keep hero badge minimal and single-line on mobile */
+  }
+  .hero-title {
+    font-size: clamp(2.1rem, 8.5vw, 3rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.15rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    max-width: 100%;
+  }
+  .hero-actions-container {
+    gap: 1.25rem;
+    margin-bottom: 2rem;
   }
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.75rem;
+    width: 100%;
   }
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
+    padding: 0.88rem 1.4rem;
+    font-size: 0.88rem;
   }
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .hero-trust-proof {
+    justify-content: flex-start;
+    gap: 0.75rem;
   }
-  .program-display-info,
-  .coach-info-pane,
-  .community-overlay {
-    padding: 2rem 1.25rem;
+  .hero-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.62rem;
+  }
+  .hero-stars {
+    font-size: 0.74rem;
+  }
+  .hero-trust-lbl {
+    font-size: 0.68rem;
+  }
+
+  /* Hero Quick Specs: 3-column compact micro-dashboard */
+  .hero-quick-specs {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.45rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero-spec-card {
+    padding: 0.75rem 0.35rem !important;
+    text-align: center;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  .hero-spec-top {
+    justify-content: center;
+    width: 100%;
+  }
+  .hero-spec-val {
+    font-size: 1.15rem !important;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+  .hero-spec-icon-wrap {
+    display: none !important;
+  }
+  .hero-spec-lbl {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  /* 02 Brand Statement Section */
+  .statement-section {
+    padding: 3.5rem 0;
+  }
+  .statement-card-container {
+    padding: 1.75rem 1rem !important;
+    border-radius: 12px;
+  }
+  .statement-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .statement-badge-pill {
+    padding: 0.35rem 0.75rem;
+    gap: 0.45rem;
+    font-size: 0.68rem;
+    margin-bottom: 1.15rem;
+  }
+  .statement-giant {
+    font-size: clamp(1.65rem, 6.8vw, 2.25rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 1.25rem;
+  }
+  .statement-lead-quote {
+    gap: 0.85rem;
+    margin-bottom: 1.35rem;
+  }
+  .quote-accent-bar {
+    width: 3px;
+  }
+  .statement-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .statement-pillars-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    width: 100%;
+  }
+  .pillar-chip {
+    width: 100%;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.72rem;
+    justify-content: flex-start;
+  }
+
+  /* Statement VIP Card */
+  .statement-vip-card {
+    padding: 1.65rem 1.15rem !important;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .vip-card-badge {
+    margin-bottom: 0.75rem;
+    font-size: 0.68rem;
+  }
+  .vip-card-title {
+    font-size: 1.15rem !important;
+    line-height: 1.25 !important;
+    word-break: normal;
+    hyphens: none;
+    margin-bottom: 0.65rem;
+  }
+  .vip-card-text {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+  .vip-perks-list {
+    gap: 0.55rem;
+    margin-bottom: 1.35rem;
+  }
+  .vip-perk-item {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+  .vip-btn-glow {
+    width: 100%;
+    padding: 0.85rem 1.25rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+    justify-content: center;
+  }
+  .vip-guarantee-note {
+    font-size: 0.68rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  /* 03 Pillars Section */
+  .pillars-section {
+    padding: 3.5rem 0;
+  }
+  .philosophy-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+  }
+  .philosophy-card {
+    min-height: auto !important;
+    padding: 1.65rem 1.25rem !important;
+    border-radius: 12px;
+  }
+  .philosophy-card-top {
+    margin-bottom: 1.25rem;
+  }
+  .philosophy-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.65rem;
+  }
+  .philosophy-text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .philosophy-card-footer {
+    margin-top: 1.35rem;
+  }
+
+  /* 04 Programs Section — Swipeable Horizontal Tabs Bar */
+  .programs-section {
+    padding: 3.5rem 0;
+  }
+  .programs-tabs-wrap {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.35rem !important;
+    gap: 0.45rem !important;
+    border-radius: 10px !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .programs-tabs-wrap::-webkit-scrollbar {
+    display: none !important;
+  }
+  .program-tab-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 0.65rem 1rem !important;
+    font-size: 0.76rem !important;
+    border-radius: 8px !important;
+  }
+  .program-display-card-wrapper {
+    min-height: auto;
+  }
+  .program-display-card {
+    grid-template-columns: 1fr !important;
+    border-radius: 12px;
+  }
+  .program-display-media {
+    min-height: 220px !important;
+    max-height: 260px !important;
+  }
+  .program-display-info {
+    padding: 1.5rem 1.15rem !important;
+  }
+  .program-display-title {
+    font-size: 1.45rem !important;
+    margin-bottom: 0.65rem;
+  }
+  .program-display-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.25rem !important;
   }
   .program-features-list {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-top: 1rem !important;
+  }
+  .program-feature-item {
+    font-size: 0.84rem !important;
+  }
+  .program-card-actions {
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  .program-enroll-btn,
+  .program-curriculum-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.85rem 1.25rem !important;
+  }
+
+  /* 05 Stats Section — 2x2 Telemetry Grid */
+  .stats-section {
+    padding: 3rem 0;
+  }
+  .stats-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+  }
+  .stat-card {
+    padding: 1.2rem 0.85rem !important;
+    border-radius: 12px;
+  }
+  .stat-card-top {
+    margin-bottom: 0.75rem;
+  }
+  .stat-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  .stat-tag {
+    font-size: 0.55rem;
+    padding: 0.2rem 0.45rem;
+  }
+  .stat-number-row {
+    font-size: 1.85rem;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label {
+    font-size: 0.82rem;
+    line-height: 1.2;
+  }
+  .stat-detail {
+    display: none !important; /* Hide long paragraph on mobile for compact dashboard */
+  }
+  .stat-card-footer {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+  }
+
+  /* 06 Facility Section */
+  .facility-section {
+    padding: 3.5rem 0;
+  }
+  .facility-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  .facility-header-cta {
+    width: 100%;
+  }
+  .facility-tour-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .facility-grid {
     grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+  .facility-card {
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .facility-card-badges {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    padding: 1.25rem 1.15rem 0.5rem !important;
+    z-index: 3;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    pointer-events: none;
+  }
+  .facility-zone-badge {
+    font-size: 0.65rem !important;
+    padding: 0.32rem 0.7rem !important;
+    letter-spacing: 0.08em !important;
+  }
+  .facility-spec-pill {
+    font-size: 0.62rem !important;
+    padding: 0.32rem 0.65rem !important;
+  }
+  .facility-img-overlay {
+    background: linear-gradient(180deg,
+      rgba(8, 10, 18, 0.75) 0%,
+      rgba(8, 10, 18, 0.35) 25%,
+      rgba(8, 10, 18, 0.85) 55%,
+      rgba(8, 10, 18, 0.98) 100%
+    ) !important;
+  }
+  .facility-caption {
+    position: relative;
+    z-index: 3;
+    padding: 0.5rem 1.15rem 1.35rem !important;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .facility-category {
+    font-size: 0.66rem !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .facility-title {
+    font-size: 1.35rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.55rem !important;
+  }
+  .facility-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.85rem !important;
+    color: var(--text-offwhite) !important;
+  }
+  .facility-chips {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    margin-bottom: 0.95rem !important;
+  }
+  .facility-chip {
+    font-size: 0.64rem !important;
+    padding: 0.25rem 0.55rem !important;
+    border-radius: 4px !important;
+  }
+  .facility-action-hint {
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    color: var(--lime) !important;
+  }
+  .facility-amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .facility-amenity-card {
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+  }
+
+  /* 07 Coach Section */
+  .coach-section {
+    padding: 3.5rem 0;
+  }
+  .coach-showcase-grid {
+    grid-template-columns: 1fr !important;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .coach-portrait-wrap {
+    min-height: 280px;
+    height: 300px;
+    width: 100%;
+  }
+  .coach-portrait-img {
+    object-position: center 20%;
+  }
+  .coach-info-pane {
+    padding: 1.65rem 1.15rem !important;
+  }
+  .coach-name {
+    font-size: 1.55rem;
+    line-height: 1.15;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .coach-role {
+    font-size: 0.72rem;
+    margin-bottom: 1.15rem;
+  }
+  .coach-bio {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 1.35rem;
+  }
+  .coach-credentials {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-top: 1.15rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 100% !important;
+  }
+  .cred-item {
+    text-align: center !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 8px !important;
+    padding: 0.65rem 0.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .cred-val {
+    font-size: 1.15rem !important;
+    color: var(--lime) !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+  }
+  .cred-lbl {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.25 !important;
+    margin-top: 0.25rem !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    text-align: center !important;
+    color: var(--text-muted) !important;
+  }
+  .coach-info-pane .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.88rem 1.25rem !important;
+  }
+
+  /* 09 Community & Trial Pass (Twin Cards) */
+  .community-cta-section {
+    padding: 3.5rem 0;
+  }
+  .community-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.35rem !important;
+  }
+  .twin-card {
+    min-height: 440px;
+    padding: 1.75rem 1.15rem 1.5rem !important;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .twin-card-overlay {
+    background: linear-gradient(180deg,
+      rgba(8, 10, 18, 0.85) 0%,
+      rgba(8, 10, 18, 0.6) 30%,
+      rgba(8, 10, 18, 0.88) 60%,
+      rgba(8, 10, 18, 0.98) 100%
+    ) !important;
+  }
+  .twin-card-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    position: relative;
+    z-index: 3;
+  }
+  .twin-card-top .badge-lime {
+    font-size: 0.68rem !important;
+    padding: 0.35rem 0.75rem !important;
+    gap: 0.35rem !important;
+  }
+  .twin-hud-badge {
+    display: none !important; /* Hide secondary HUD badge on mobile to eliminate clumsy 2-line badge stack */
+  }
+  .twin-card-content {
+    position: relative;
+    z-index: 3;
+    margin-top: auto;
+  }
+  .twin-kicker {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .twin-card-title {
+    font-size: 1.35rem !important;
+    line-height: 1.18 !important;
+    margin-bottom: 0.65rem !important;
+  }
+  .twin-card-desc {
+    font-size: 0.86rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.15rem !important;
+    color: var(--text-offwhite) !important;
+  }
+  .twin-chips {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .twin-chip {
+    font-size: 0.65rem !important;
+    padding: 0.25rem 0.55rem !important;
+    border-radius: 4px !important;
+  }
+  .twin-btn-row {
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  .twin-btn,
+  .twin-btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.88rem 1.25rem !important;
+    font-size: 0.84rem !important;
+  }
+
+  /* 11 Location Section */
+  .location-section {
+    padding: 3.5rem 0;
+  }
+  .location-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+  }
+  .location-card,
+  .location-section .adam-card {
+    padding: 1.65rem 1.25rem !important;
+    border-radius: 12px;
+  }
+  .location-icon-box {
+    margin-bottom: 0.85rem;
+  }
+  .location-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .location-card-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
   }
 }
+
+/* Small Handsets (< 480px) */
+@media (max-width: 480px) {
+  .hero-slide-indicators {
+    display: none;
+  }
+  .hero-quick-specs {
+    gap: 0.35rem !important;
+  }
+  .hero-spec-card {
+    padding: 0.65rem 0.25rem !important;
+  }
+  .hero-spec-val {
+    font-size: 1.05rem !important;
+  }
+  .hero-spec-lbl {
+    font-size: 0.54rem !important;
+  }
+  .statement-giant {
+    font-size: 1.65rem !important;
+  }
+  .statement-vip-card {
+    padding: 1.4rem 0.95rem !important;
+  }
+  .stat-number-row {
+    font-size: 1.65rem !important;
+  }
+  .stat-label {
+    font-size: 0.76rem !important;
+  }
+  .facility-card {
+    min-height: 450px;
+  }
+  .facility-title {
+    font-size: 1.25rem !important;
+  }
+  .facility-desc {
+    font-size: 0.8rem !important;
+  }
+  .coach-portrait-wrap {
+    height: 260px;
+  }
+  .coach-name {
+    font-size: 1.35rem !important;
+  }
+  .coach-bio {
+    font-size: 0.84rem !important;
+  }
+  .cred-val {
+    font-size: 1.05rem !important;
+  }
+  .cred-lbl {
+    font-size: 0.54rem !important;
+  }
+  .twin-card {
+    min-height: 430px;
+    padding: 1.5rem 1rem 1.35rem !important;
+  }
+  .twin-card-title {
+    font-size: 1.25rem !important;
+  }
+  .twin-card-desc {
+    font-size: 0.82rem !important;
+  }
+}
+
 
 /* ===================================================
    LIGHT THEME OVERRIDES FOR HOME PAGE SECTIONS
