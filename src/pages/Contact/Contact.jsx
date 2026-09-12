@@ -40,16 +40,16 @@ export default function Contact() {
         <div className="container">
           <span className="badge-lime">
             <span className="badge-dot"></span>
-            DIRECT CONCIERGE
+            WE ARE HERE TO HELP
           </span>
 
           <h1 className="contact-hero-title">
-            CONNECT WITH <br />
+            GET IN TOUCH WITH <br className="hero-desktop-br" />
             <span className="text-lime">ADAM FITNESS.</span>
           </h1>
 
           <p className="contact-hero-lead">
-            Take the first decisive step towards your physical peak. Inquire about private coaching, schedule your facility tour, or speak directly with our performance director.
+            Have questions about memberships, personal training, or want to come by for a free tour? We'd love to hear from you. Send us a message or call us anytime.
           </p>
         </div>
       </section>
@@ -65,9 +65,9 @@ export default function Contact() {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h3 className="contact-card-title">Direct Telephone</h3>
+                  <h3 className="contact-card-title">Phone Us</h3>
                   <p className="contact-card-text">
-                    Speak directly with our front desk reception and coaching staff during operating hours.
+                    Give our friendly front desk team a call during regular gym hours.
                   </p>
                   <a href="tel:+18005552326" className="contact-card-link">
                     +1 (800) 555-ADAM &rarr;
@@ -80,9 +80,9 @@ export default function Contact() {
                   <MessageCircle size={24} />
                 </div>
                 <div>
-                  <h3 className="contact-card-title">WhatsApp Concierge</h3>
+                  <h3 className="contact-card-title">WhatsApp Chat</h3>
                   <p className="contact-card-text">
-                    Fast instant messaging for quick schedule checks, session rebooking, and pass verification.
+                    Message us on WhatsApp for quick answers about passes, gym tours, or memberships.
                   </p>
                   <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="contact-card-link">
                     Start WhatsApp Chat &rarr;
@@ -95,9 +95,9 @@ export default function Contact() {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h3 className="contact-card-title">Email Inquiries</h3>
+                  <h3 className="contact-card-title">Email Us</h3>
                   <p className="contact-card-text">
-                    Corporate partnerships, private suite bookings, and general membership questions.
+                    Send us a message anytime for general questions or membership details.
                   </p>
                   <a href="mailto:info@adamfitnesscentre.com" className="contact-card-link">
                     info@adamfitnesscentre.com &rarr;
@@ -110,11 +110,11 @@ export default function Contact() {
                   <Clock size={24} />
                 </div>
                 <div>
-                  <h3 className="contact-card-title">Operating Schedule</h3>
+                  <h3 className="contact-card-title">Gym Opening Hours</h3>
                   <p className="contact-card-text">
                     <strong>Monday – Friday:</strong> 5:30 AM – 10:30 PM<br />
                     <strong>Saturday – Sunday:</strong> 6:00 AM – 9:00 PM<br />
-                    <span style={{ color: 'var(--lime)', fontWeight: 600 }}>VIP Keycard Members: 24/7 Access</span>
+                    <span style={{ color: 'var(--lime)', fontWeight: 600 }}>VIP Keycard Members: 24/7 Gym Access</span>
                   </p>
                 </div>
               </div>
@@ -128,10 +128,10 @@ export default function Contact() {
                     <CheckCircle2 size={42} />
                   </div>
                   <h3 style={{ textTransform: 'uppercase', fontSize: '1.8rem', marginTop: '1rem' }}>
-                    INQUIRY TRANSMITTED
+                    MESSAGE RECEIVED!
                   </h3>
                   <p style={{ fontSize: '1.05rem', color: 'var(--text-offwhite)' }}>
-                    Thank you, <strong>{formData.name}</strong>. Your inquiry regarding <strong>{formData.interest}</strong> has been logged. An ADAM Performance Coach will contact you at <strong>{formData.phone || formData.email}</strong> shortly.
+                    Thank you, <strong>{formData.name}</strong>! We have received your request for <strong>{formData.interest}</strong>. One of our friendly team members will contact you at <strong>{formData.phone || formData.email}</strong> shortly.
                   </p>
                   <button
                     type="button"
@@ -139,17 +139,17 @@ export default function Contact() {
                     onClick={() => setIsSent(false)}
                     style={{ marginTop: '1.5rem' }}
                   >
-                    SUBMIT ANOTHER REQUEST
+                    SEND ANOTHER MESSAGE
                   </button>
                 </div>
               ) : (
                 <div>
                   <span className="badge-lime" style={{ marginBottom: '1rem' }}>
-                    RESERVE AN APPOINTMENT
+                    FREE GYM PASS & TOUR
                   </span>
-                  <h3 className="contact-form-title">BOOK COACH CONSULTATION</h3>
+                  <h3 className="contact-form-title">CLAIM YOUR FREE 1-DAY PASS</h3>
                   <p className="contact-form-desc">
-                    Fill out the form below to claim your complimentary assessment and personalized tour of our Olympic training grounds.
+                    Fill out this quick form to claim your free 1-day gym pass and a friendly, zero-pressure tour.
                   </p>
 
                   <form className="modal-form" onSubmit={handleSubmit}>
@@ -199,7 +199,7 @@ export default function Contact() {
 
                     <div className="form-row">
                       <div className="form-group">
-                        <label className="form-label" htmlFor="contact-interest">Interest Track</label>
+                        <label className="form-label" htmlFor="contact-interest">I'm Interested In</label>
                         <select
                           id="contact-interest"
                           name="interest"
@@ -208,15 +208,14 @@ export default function Contact() {
                           onChange={handleChange}
                         >
                           <option value="Personal Training">1-on-1 Personal Training</option>
-                          <option value="Strength & Power">Strength & Powerlifting</option>
-                          <option value="Functional Squad">Functional Squad Conditioning</option>
-                          <option value="Athletic Lab">Athletic Performance Lab</option>
-                          <option value="Facility Tour">Facility Tour Only</option>
+                          <option value="Strength & Power">Barbell Strength & Lifting</option>
+                          <option value="Functional Squad">Circuit & Cardio Fitness</option>
+                          <option value="Free 1-Day Pass">Free 1-Day Pass & Tour</option>
                         </select>
                       </div>
 
                       <div className="form-group">
-                        <label className="form-label" htmlFor="contact-time">Preferred Window</label>
+                        <label className="form-label" htmlFor="contact-time">Best Time to Visit</label>
                         <select
                           id="contact-time"
                           name="preferredTime"
@@ -232,12 +231,12 @@ export default function Contact() {
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label" htmlFor="contact-message">Training Goals or Questions</label>
+                      <label className="form-label" htmlFor="contact-message">Your Goals or Questions (Optional)</label>
                       <textarea
                         id="contact-message"
                         name="message"
                         rows="4"
-                        placeholder="Tell us about your current training routine, any injuries, or specific milestones..."
+                        placeholder="Tell us what fitness goals you have in mind or any questions you'd like to ask..."
                         className="form-textarea"
                         value={formData.message}
                         onChange={handleChange}
@@ -249,7 +248,7 @@ export default function Contact() {
                       className="btn btn-primary"
                       style={{ width: '100%', marginTop: '0.75rem' }}
                     >
-                      <span>CONFIRM CONSULTATION</span>
+                      <span>GET MY FREE PASS</span>
                       <ArrowRight size={18} />
                     </button>
                   </form>
@@ -264,10 +263,10 @@ export default function Contact() {
       <section className="section" style={{ paddingTop: '0' }}>
         <div className="container">
           <SectionHeader
-            badge="FACILITY LOCATION"
-            title="FIND THE"
-            titleHighlight="TRAINING GROUND"
-            subtitle="Centrally positioned with dedicated athlete underground parking and rapid transit access."
+            badge="OUR LOCATION"
+            title="HOW TO"
+            titleHighlight="FIND US"
+            subtitle="Centrally located with free underground member parking and easy public transit access."
           />
 
           <div className="map-transit-grid">
@@ -290,16 +289,16 @@ export default function Contact() {
 
             <div className="transit-info-pane">
               <div>
-                <h3 className="transit-title">Arrival & Parking</h3>
+                <h3 className="transit-title">Getting Here & Parking</h3>
                 <ul className="transit-list">
                   <li className="transit-item">
-                    <strong>Underground Parking:</strong> Free 2-hour validated secure parking for all members and consultation guests via Ramp B.
+                    <strong>Free Underground Parking:</strong> 2 hours of free, secure validated parking for members and visitors via Ramp B.
                   </li>
                   <li className="transit-item">
-                    <strong>Subway & Transit:</strong> 3-minute walk from Central Olympic Station (Lines 1, 2, A, C).
+                    <strong>Subway & Transit:</strong> A quick 3-minute walk from Central Olympic Station (Lines 1, 2, A, C).
                   </li>
                   <li className="transit-item">
-                    <strong>Check-In Concierge:</strong> Present your digital pass or QR confirmation at reception upon arrival.
+                    <strong>Welcome Desk:</strong> Just show your name or confirmation at the front desk when you arrive.
                   </li>
                 </ul>
               </div>

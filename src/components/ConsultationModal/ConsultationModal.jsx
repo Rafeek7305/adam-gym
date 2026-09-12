@@ -53,9 +53,9 @@ export default function ConsultationModal({ isOpen, onClose }) {
             <div className="success-icon-wrap">
               <CheckCircle2 size={36} />
             </div>
-            <h3 style={{ textTransform: 'uppercase' }}>CONSULTATION SECURED</h3>
+            <h3 style={{ textTransform: 'uppercase' }}>YOU'RE ALL SET!</h3>
             <p>
-              Thank you, <strong>{formData.name}</strong>. An ADAM Performance Director has received your request for <strong>{formData.program}</strong>. We will contact you at <strong>{formData.phone || formData.email}</strong> within 2 hours to confirm your private assessment.
+              Thank you, <strong>{formData.name}</strong>! We've received your request for <strong>{formData.program}</strong>. One of our friendly team members will contact you at <strong>{formData.phone || formData.email}</strong> shortly to confirm your visit.
             </p>
             <button
               type="button"
@@ -63,7 +63,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
               onClick={handleResetAndClose}
               style={{ marginTop: '1rem', width: '100%' }}
             >
-              RETURN TO SITE
+              BACK TO HOME
             </button>
           </div>
         ) : (
@@ -71,11 +71,11 @@ export default function ConsultationModal({ isOpen, onClose }) {
             <div className="modal-header">
               <span className="badge-lime">
                 <span className="badge-dot"></span>
-                COMPLIMENTARY PASS
+                100% FREE PASS
               </span>
-              <h2 className="modal-title">START YOUR TRANSFORMATION</h2>
+              <h2 className="modal-title">CLAIM YOUR FREE 1-DAY PASS</h2>
               <p style={{ marginTop: '0.4rem', fontSize: '0.95rem' }}>
-                Schedule your biomechanical screening and 1-day elite training access at ADAM FITNESS CENTRE.
+                Come visit ADAM FITNESS CENTRE, meet our friendly coaches, and try our gym for a full day.
               </p>
             </div>
 
@@ -126,7 +126,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label className="form-label" htmlFor="program">Primary Objective</label>
+                  <label className="form-label" htmlFor="program">What's Your Main Goal?</label>
                   <select
                     id="program"
                     name="program"
@@ -134,16 +134,16 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     value={formData.program}
                     onChange={handleChange}
                   >
-                    <option value="Strength Training">Strength & Powerlifting</option>
-                    <option value="1-on-1 Personal Coaching">1-on-1 Personal Coaching</option>
-                    <option value="Functional Conditioning">Functional Conditioning</option>
-                    <option value="Athletic Performance">Athletic Performance</option>
-                    <option value="Facility Tour & Pass">Facility Tour & Pass</option>
+                    <option value="Get Stronger (Barbell Lifting)">Get Stronger (Barbell Lifting)</option>
+                    <option value="1-on-1 Personal Training">1-on-1 Personal Training</option>
+                    <option value="Burn Fat & Tone Up">Burn Fat & Tone Up</option>
+                    <option value="Cardio & Circuit Fitness">Cardio & Circuit Fitness</option>
+                    <option value="Free Gym Tour & 1-Day Pass">Free Gym Tour & 1-Day Pass</option>
                   </select>
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label" htmlFor="timeSlot">Preferred Training Time</label>
+                  <label className="form-label" htmlFor="timeSlot">Best Time to Visit</label>
                   <select
                     id="timeSlot"
                     name="timeSlot"
@@ -159,7 +159,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
               </div>
 
               <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.75rem' }}>
-                <span>CLAIM ASSESSMENT & PASS</span>
+                <span>GET MY FREE 1-DAY PASS</span>
                 <ArrowRight size={18} />
               </button>
             </form>

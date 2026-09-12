@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import SmoothScroller from './utils/smoothScroll'
 import { Router, Routes, Route } from './router/Router'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar/Navbar'
@@ -17,6 +18,21 @@ export default function App() {
 
   const handleOpenConsultation = () => setIsConsultationOpen(true)
   const handleCloseConsultation = () => setIsConsultationOpen(false)
+
+  // Initialize SmoothScroller for 60FPS butter-smooth laptop and desktop scrolling
+  useEffect(() => {
+    const scroller = new SmoothScroller({
+      friction: 0.085,
+      wheelMultiplier: 0.88
+    })
+
+    window.__lenis = scroller
+
+    return () => {
+      scroller.destroy()
+      delete window.__lenis
+    }
+  }, [])
 
   return (
     <ThemeProvider>

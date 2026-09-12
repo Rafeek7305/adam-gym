@@ -207,7 +207,7 @@ export default function Navbar({ onOpenConsultation }) {
               if (onOpenConsultation) onOpenConsultation()
             }}
           >
-            <span>CLAIM FREE TRIAL PASS</span>
+            <span>CLAIM FREE 1-DAY PASS</span>
             <ArrowUpRight size={16} />
           </button>
 
