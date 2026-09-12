@@ -26,6 +26,8 @@
   background: radial-gradient(circle, rgba(180, 240, 0, 0.12) 0%, rgba(180, 240, 0, 0.04) 35%, transparent 68%);
   pointer-events: none;
   z-index: 1;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .hero-grid-mesh {
@@ -38,6 +40,7 @@
   opacity: 0.7;
   pointer-events: none;
   z-index: 1;
+  transform: translateZ(0);
 }
 
 /* Media Background & 3-Image Workout Crossfade */
@@ -49,6 +52,7 @@
   height: 100%;
   z-index: 1;
   overflow: hidden;
+  transform: translateZ(0);
 }
 
 .hero-slide-item {
@@ -57,14 +61,15 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: scale(1.02);
+  transform: scale(1.02) translateZ(0);
+  will-change: opacity, transform;
   z-index: 1;
 }
 
 .hero-slide-item.active {
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
+  transform: scale(1) translateZ(0);
   z-index: 2;
 }
 
@@ -977,10 +982,13 @@
 
 @media (max-width: 640px) {
   .statement-card-container {
-    padding: 2.25rem 1.25rem;
+    padding: 2rem 1.25rem;
   }
   .statement-pillars-chips {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }
 
@@ -2737,17 +2745,18 @@
 @media (max-width: 768px) {
   /* 01 Hero Section */
   .hero-section {
-    padding-top: calc(var(--nav-height) + 1rem);
+    padding-top: calc(var(--nav-height) + 3rem);
     padding-bottom: 3.5rem;
   }
   .hero-badge-pill {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.35rem 0.85rem;
+    padding: 0.4rem 0.95rem;
     border-radius: 100px;
     max-width: 100%;
-    margin-bottom: 1.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1.35rem;
   }
   .hero-badge-text {
     font-size: 0.68rem;
@@ -2838,92 +2847,133 @@
 
   /* 02 Brand Statement Section */
   .statement-section {
-    padding: 3.5rem 0;
+    padding: 2.75rem 0 !important;
   }
   .statement-card-container {
-    padding: 1.75rem 1rem !important;
-    border-radius: 12px;
+    padding: 1.5rem 1.15rem !important;
+    border-radius: 14px !important;
   }
   .statement-grid {
     grid-template-columns: 1fr !important;
-    gap: 2rem !important;
+    gap: 1.85rem !important;
   }
   .statement-badge-pill {
-    padding: 0.35rem 0.75rem;
-    gap: 0.45rem;
-    font-size: 0.68rem;
-    margin-bottom: 1.15rem;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.32rem 0.8rem !important;
+    border-radius: 100px !important;
+    margin-bottom: 1.15rem !important;
+    white-space: nowrap !important;
+    max-width: 100% !important;
+    width: fit-content !important;
+  }
+  .statement-badge-txt {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  .statement-badge-sep {
+    font-size: 0.75rem !important;
+    opacity: 0.6;
+  }
+  .statement-badge-sub {
+    font-size: 0.64rem !important;
+    letter-spacing: 0.06em !important;
   }
   .statement-giant {
-    font-size: clamp(1.65rem, 6.8vw, 2.25rem) !important;
-    line-height: 1.08 !important;
-    margin-bottom: 1.25rem;
+    font-size: clamp(1.45rem, 5.8vw, 1.85rem) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 1.15rem !important;
+    letter-spacing: -0.015em !important;
   }
   .statement-lead-quote {
-    gap: 0.85rem;
-    margin-bottom: 1.35rem;
+    display: flex !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+    margin-bottom: 1.25rem !important;
   }
   .quote-accent-bar {
-    width: 3px;
+    width: 3px !important;
+    border-radius: 2px !important;
+    flex-shrink: 0 !important;
   }
   .statement-desc {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    color: var(--text-offwhite) !important;
   }
   .statement-pillars-chips {
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 0.45rem !important;
+    width: 100% !important;
   }
   .pillar-chip {
-    width: 100%;
-    padding: 0.55rem 0.85rem;
-    font-size: 0.72rem;
-    justify-content: flex-start;
+    width: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.42rem 0.75rem !important;
+    border-radius: 100px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  }
+  .chip-icon-box {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--lime) !important;
+  }
+  .chip-text {
+    white-space: nowrap !important;
+    font-size: 0.74rem !important;
+    font-weight: 600 !important;
+    color: var(--text-offwhite) !important;
   }
 
   /* Statement VIP Card */
   .statement-vip-card {
-    padding: 1.65rem 1.15rem !important;
-    border-radius: 10px;
-    width: 100%;
+    padding: 1.4rem 1.1rem !important;
+    border-radius: 12px !important;
+    width: 100% !important;
   }
   .vip-card-badge {
-    margin-bottom: 0.75rem;
-    font-size: 0.68rem;
+    margin-bottom: 0.65rem !important;
+    font-size: 0.68rem !important;
   }
   .vip-card-title {
-    font-size: 1.15rem !important;
+    font-size: 1.1rem !important;
     line-height: 1.25 !important;
     word-break: normal;
     hyphens: none;
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.5rem !important;
   }
   .vip-card-text {
-    font-size: 0.86rem;
-    line-height: 1.55;
-    margin-bottom: 1.25rem;
+    font-size: 0.84rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
   }
   .vip-perks-list {
-    gap: 0.55rem;
-    margin-bottom: 1.35rem;
+    gap: 0.45rem !important;
+    margin-bottom: 1.15rem !important;
   }
   .vip-perk-item {
-    font-size: 0.78rem;
-    line-height: 1.4;
+    font-size: 0.76rem !important;
+    line-height: 1.35 !important;
   }
   .vip-btn-glow {
-    width: 100%;
-    padding: 0.85rem 1.25rem !important;
-    font-size: 0.85rem !important;
-    white-space: nowrap;
-    justify-content: center;
+    width: 100% !important;
+    padding: 0.8rem 1.15rem !important;
+    font-size: 0.84rem !important;
+    white-space: nowrap !important;
+    justify-content: center !important;
   }
   .vip-guarantee-note {
-    font-size: 0.68rem;
+    font-size: 0.68rem !important;
     line-height: 1.35;
-    text-align: center;
+    text-align: center !important;
+    margin-top: 0.65rem !important;
   }
 
   /* 03 Pillars Section */
@@ -3391,11 +3441,49 @@
   .hero-spec-lbl {
     font-size: 0.54rem !important;
   }
+  .statement-section {
+    padding: 2.25rem 0 !important;
+  }
+  .statement-card-container {
+    padding: 1.35rem 0.95rem !important;
+    border-radius: 12px !important;
+  }
+  .statement-grid {
+    gap: 1.45rem !important;
+  }
+  .statement-badge-sep,
+  .statement-badge-sub {
+    display: none !important;
+  }
+  .statement-badge-pill {
+    padding: 0.28rem 0.68rem !important;
+    margin-bottom: 0.95rem !important;
+  }
+  .statement-badge-txt {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.08em !important;
+  }
   .statement-giant {
-    font-size: 1.65rem !important;
+    font-size: clamp(1.22rem, 5.4vw, 1.55rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.95rem !important;
+  }
+  .statement-lead-quote {
+    gap: 0.65rem !important;
+    margin-bottom: 1.15rem !important;
+  }
+  .statement-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+  }
+  .pillar-chip {
+    padding: 0.35rem 0.65rem !important;
+  }
+  .chip-text {
+    font-size: 0.7rem !important;
   }
   .statement-vip-card {
-    padding: 1.4rem 0.95rem !important;
+    padding: 1.25rem 0.95rem !important;
   }
   .stat-number-row {
     font-size: 1.65rem !important;

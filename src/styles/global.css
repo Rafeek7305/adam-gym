@@ -13,10 +13,11 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   background-color: var(--bg-dark);
   color: var(--text-white);
   font-family: 'Ysabeau Office', sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -25,8 +26,30 @@ body {
   color: var(--text-offwhite);
   font-family: 'Ysabeau Office', sans-serif;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 60FPS Lenis Smooth Scroll Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 /* Custom Selection */
@@ -119,6 +142,8 @@ button, input, textarea, select {
   padding: 7rem 0;
   position: relative;
   z-index: 2;
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
 }
 
 @media (max-width: 768px) {
@@ -345,4 +370,15 @@ button, input, textarea, select {
 
 .animate-slide-up {
   animation: slideUp 0.8s var(--ease-cinematic) forwards;
+}
+
+/* Responsive Desktop-Only Line Breaks */
+.hero-desktop-br {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-desktop-br {
+    display: none !important;
+  }
 }

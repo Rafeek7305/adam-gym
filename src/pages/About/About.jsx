@@ -26,16 +26,16 @@ export default function About({ onOpenConsultation }) {
         <div className="container">
           <span className="badge-lime">
             <span className="badge-dot"></span>
-            OUR ORIGIN & PHILOSOPHY
+            OUR STORY & PURPOSE
           </span>
 
           <h1 className="about-hero-title">
-            WHERE DISCIPLINE MEETS <br />
-            <span className="text-lime">PERFORMANCE.</span>
+            A REAL GYM BUILT TO HELP YOU <br className="hero-desktop-br" />
+            <span className="text-lime">GET STRONGER & HEALTHIER.</span>
           </h1>
 
           <p className="about-hero-lead">
-            ADAM FITNESS CENTRE was founded on an unapologetic belief: physical and mental strength are not accidents of genetics—they are engineered through deliberate discipline and rigorous standards.
+            ADAM FITNESS CENTRE was founded on a simple belief: getting fit and staying healthy shouldn't be complicated. With clear guidance, good habits, and the right encouragement, anyone can transform their fitness.
           </p>
         </div>
       </section>
@@ -45,35 +45,37 @@ export default function About({ onOpenConsultation }) {
         <div className="container">
           <div className="editorial-story-grid">
             <div className="story-text-column">
-              <span className="badge-dark" style={{ marginBottom: '1.25rem' }}>01 // THE MANIFESTO</span>
+              <span className="badge-dark" style={{ marginBottom: '1.25rem' }}>01 // WHY WE STARTED</span>
               <p>
-                In a fitness landscape overrun by short-lived trends, flashy influencer gimmicks, and crowded big-box facilities where nobody knows your name, ADAM was constructed as an antidote: a temple of pure athletic performance.
+                Too many gyms today are either overcrowded, impersonal, or filled with confusing fitness fads. We wanted to build something better: a clean, welcoming space where coaches actually know your name and care about your journey.
               </p>
               <p>
-                From our custom matte black Olympic power cages and Eleiko competition bars to our biomechanically tuned recovery protocols, every square inch of ADAM is built for individuals who take their time and physical potential seriously.
+                From our high-quality squat racks and barbells to our wide selection of dumbbells and open turf, every part of ADAM is designed to help you work out effectively and safely.
               </p>
               <p>
-                We serve athletes, high-performing professionals, and dedicated individuals who value measurable progress over participation trophies.
+                Whether you are brand new to working out or looking to break your personal records, we provide the support, plan, and community you need.
               </p>
             </div>
 
             <div className="story-quote-card">
               <div className="story-quote-mark">&ldquo;</div>
               <p className="story-quote-text">
-                Discipline is not punishment. It is the highest form of self-respect. What you build within these walls echoes into every aspect of your life.
+                Fitness is not about punishment. It's about respecting your body and feeling proud of your effort. The strength you build here helps you in every part of your life.
               </p>
               <div className="story-quote-author">
-                — MARCUS VAUGHN, FOUNDER & HEAD COACH
+                — MARCUS VAUGHN, FOUNDER & HEAD TRAINER
               </div>
             </div>
           </div>
 
           {/* Large Facility Photo Banner */}
-          <div style={{ borderRadius: '8px', overflow: 'hidden', height: '420px', border: '1px solid var(--border-subtle)' }}>
+          <div className="about-facility-banner">
             <img
               src={facilityInterior}
-              alt="ADAM High-Performance Arena"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              alt="ADAM Fitness Centre Space"
+              loading="lazy"
+              decoding="async"
+              className="about-facility-img"
             />
           </div>
         </div>
@@ -83,42 +85,42 @@ export default function About({ onOpenConsultation }) {
       <section className="section" style={{ background: '#0a0a0f' }}>
         <div className="container">
           <SectionHeader
-            badge="THE SCIENTIFIC METHOD"
-            title="OUR 4-PHASE"
-            titleHighlight="METHODOLOGY"
-            subtitle="How we take you from baseline movement to peak strength output with zero guesswork."
+            badge="HOW IT WORKS"
+            title="OUR 4-STEP"
+            titleHighlight="FITNESS ROADMAP"
+            subtitle="How we guide you from your very first day to reaching your fitness goals step-by-step."
           />
 
           <div className="methodology-row">
             <div className="method-card">
-              <div className="method-step">PHASE 01</div>
-              <h3 className="method-title">Biomechanical Audit</h3>
+              <div className="method-step">STEP 01</div>
+              <h3 className="method-title">Free Fitness Chat & Checkup</h3>
               <p className="method-desc">
-                Full-body joint mobility screening, kinetic chain assessment, and structural asymmetry analysis before a single kilo is loaded onto a bar.
+                We talk about your goals, past injuries, and check how your joints and muscles move so we can design a safe, effective workout plan for you.
               </p>
             </div>
 
             <div className="method-card">
-              <div className="method-step">PHASE 02</div>
-              <h3 className="method-title">Custom Blueprint</h3>
+              <div className="method-step">STEP 02</div>
+              <h3 className="method-title">Your Personal Plan</h3>
               <p className="method-desc">
-                A periodized training plan custom designed around your recovery capacity, biomechanical leverages, and concrete target goals.
+                We create a straightforward workout and nutrition roadmap tailored around your personal routine, lifestyle, and fitness level.
               </p>
             </div>
 
             <div className="method-card">
-              <div className="method-step">PHASE 03</div>
-              <h3 className="method-title">Precision Execution</h3>
+              <div className="method-step">STEP 03</div>
+              <h3 className="method-title">Guided Workouts</h3>
               <p className="method-desc">
-                Guided workouts with hands-on coaching, bar velocity tracking, and progressive load increments to stimulate adaptation without injury.
+                You'll exercise with clear, step-by-step coach guidance on proper form, safe lifting techniques, and steady daily progress.
               </p>
             </div>
 
             <div className="method-card">
-              <div className="method-step">PHASE 04</div>
-              <h3 className="method-title">Continuous Optimization</h3>
+              <div className="method-step">STEP 04</div>
+              <h3 className="method-title">Track & Celebrate Wins</h3>
               <p className="method-desc">
-                Every 4 weeks, your volume load, body composition, and functional strength markers are re-tested to evolve your next training cycle.
+                Every month, we review your strength gains and progress together, updating your plan so you keep improving and staying motivated.
               </p>
             </div>
           </div>
@@ -129,10 +131,10 @@ export default function About({ onOpenConsultation }) {
       <section className="section">
         <div className="container">
           <SectionHeader
-            badge="OUR CODE"
-            title="UNCOMPROMISING"
+            badge="WHAT WE BELIEVE"
+            title="OUR 3 SIMPLE"
             titleHighlight="CORE VALUES"
-            subtitle="The fundamental tenets that dictate our coaching standards and community standards."
+            subtitle="The key principles that guide our trainers and shape our friendly gym community."
           />
 
           <div className="values-grid">
@@ -140,9 +142,9 @@ export default function About({ onOpenConsultation }) {
               <div className="value-icon-box">
                 <Target size={24} />
               </div>
-              <h3 className="value-title">Relentless Precision</h3>
+              <h3 className="value-title">Safe Movement & Proper Form</h3>
               <p className="value-text">
-                Every rep counts. We care about ankle mobility, pelvic position, and thoracic extension. Great form leads to colossal strength.
+                We care about doing exercises correctly. Good technique protects your joints, prevents injury, and gives you the best results.
               </p>
             </div>
 
@@ -150,9 +152,9 @@ export default function About({ onOpenConsultation }) {
               <div className="value-icon-box">
                 <Shield size={24} />
               </div>
-              <h3 className="value-title">Total Accountability</h3>
+              <h3 className="value-title">Helpful Support Every Day</h3>
               <p className="value-text">
-                We celebrate consistency. Your coach monitors your attendance, recovery, and milestones with unrelenting dedication.
+                Consistency is key. Our friendly coaches are always here to keep you motivated, answer questions, and celebrate your wins.
               </p>
             </div>
 
@@ -160,9 +162,9 @@ export default function About({ onOpenConsultation }) {
               <div className="value-icon-box">
                 <Users size={24} />
               </div>
-              <h3 className="value-title">Egoless Community</h3>
+              <h3 className="value-title">A Welcoming Community</h3>
               <p className="value-text">
-                Everyone from competitive powerlifters to first-time athletes shares the same floor with humility, grit, and mutual respect.
+                Everyone from beginners taking their first steps to experienced lifters trains side-by-side with respect and friendly encouragement.
               </p>
             </div>
           </div>
@@ -172,19 +174,21 @@ export default function About({ onOpenConsultation }) {
       {/* Community Banner */}
       <section className="section" style={{ paddingTop: '0' }}>
         <div className="container">
-          <div style={{ borderRadius: '8px', overflow: 'hidden', position: 'relative', minHeight: '440px', border: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center' }}>
+          <div className="about-community-banner">
             <img
               src={communityTraining}
               alt="Community Training"
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.65)' }}
+              loading="lazy"
+              decoding="async"
+              className="about-community-bg"
             />
-            <div style={{ position: 'relative', zIndex: 2, padding: '3.5rem', maxWidth: '650px' }}>
-              <span className="badge-lime" style={{ marginBottom: '1rem' }}>JOIN THE BROTHERHOOD</span>
-              <h3 style={{ textTransform: 'uppercase', color: 'var(--text-white)', fontSize: '2.4rem', lineHeight: 1.1, marginBottom: '1rem' }}>
-                YOU ARE THE COMPANY YOU TRAIN WITH.
+            <div className="about-community-content">
+              <span className="badge-lime" style={{ marginBottom: '1rem' }}>JOIN OUR COMMUNITY</span>
+              <h3 className="about-community-title">
+                SURROUND YOURSELF WITH PEOPLE WHO LIFT YOU UP.
               </h3>
-              <p style={{ color: 'var(--text-offwhite)', marginBottom: '2rem' }}>
-                Step into an environment where excuses don't survive and human performance is elevated every single morning.
+              <p className="about-community-desc">
+                Step into a gym where everyone is friendly, helpful, and working together to build healthier, happier lives.
               </p>
               <button
                 type="button"
